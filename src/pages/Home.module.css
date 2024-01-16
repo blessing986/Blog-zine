@@ -1,0 +1,15 @@
+.img1 {
+  width: 900px;
+  height: 808px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .img1 {
+    width: 900px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+  }
+}
