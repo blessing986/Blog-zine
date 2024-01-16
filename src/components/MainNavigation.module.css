@@ -5,6 +5,7 @@ header {
   position: sticky;
   top: 0;
   padding: 1rem;
+  background-color: white;
 }
 
 header ul {
@@ -44,7 +45,9 @@ header ul li a:not(.active):hover {
     flex-direction: column;
     top: 4rem;
     right: 0.5rem;
-    background-color: rgb(15 23 42);
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
   }
 
   header ul.open {
