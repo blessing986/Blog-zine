@@ -3,6 +3,7 @@ import img1 from "../assets/food1.jpg";
 import img2 from "../assets/food2.jpg";
 import img3 from "../assets/food3.jpg";
 import img4 from "../assets/food4.jpg";
+import TopHighlights from "./TopHighlights";
 
 export default function Home() {
   const [hover, setHover] = useState(false);
@@ -60,9 +61,11 @@ export default function Home() {
         </div>
 
         <div>
-          <div className="relative cursor-pointer"
-           onMouseOver={handleMouseOver}
-           onMouseOut={handleMouseOut}>
+          <div
+            className="relative cursor-pointer"
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+          >
             <div className="w-full h-96 overflow-hidden rounded-3xl mb-10">
               <img
                 src={img2}
@@ -76,7 +79,9 @@ export default function Home() {
                 <p className="w-4 h-4 bg-white rounded-full mx-2"></p>Technology
               </p>
 
-              <h1 className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}>
+              <h1
+                className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
+              >
                 Best Pinterest boards for learning about business
               </h1>
 
@@ -91,9 +96,11 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-10">
-            <div className="relative cursor-pointer"
-             onMouseOver={handleMouseOver}
-             onMouseOut={handleMouseOut}>
+            <div
+              className="relative cursor-pointer"
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
               <div className="w-full h-96 overflow-hidden rounded-3xl">
                 <img
                   src={img3}
@@ -107,7 +114,9 @@ export default function Home() {
                   Business
                 </p>
 
-                <h1 className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}>
+                <h1
+                  className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
+                >
                   Five intermediate guide to business
                 </h1>
 
@@ -121,9 +130,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative cursor-pointer"
-             onMouseOver={handleMouseOver}
-             onMouseOut={handleMouseOut}>
+            <div
+              className="relative cursor-pointer"
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
               <div className="w-full h-96 overflow-hidden rounded-3xl">
                 <img
                   src={img4}
@@ -137,7 +148,9 @@ export default function Home() {
                   Sports
                 </p>
 
-                <h1 className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}>
+                <h1
+                  className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
+                >
                   15 reasons to choose <br /> startup
                 </h1>
 
@@ -166,6 +179,7 @@ export default function Home() {
           <h1 className="absolute top-2">i love you</h1>
         </div>
       </div> */}
+      <TopHighlights />
     </>
   );
 }
