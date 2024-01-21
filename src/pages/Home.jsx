@@ -3,7 +3,7 @@ import img1 from "../assets/food1.jpg";
 import img2 from "../assets/food2.jpg";
 import img3 from "../assets/food3.jpg";
 import img4 from "../assets/food4.jpg";
-import TopHighlights from "./TopHighlights";
+import TopHighlights from "../components/TopHighlights";
 
 export default function Home() {
   const [hover, setHover] = useState(false);
