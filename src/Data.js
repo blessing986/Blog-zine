@@ -78,3 +78,85 @@ export const TOP_HIGHLIGHTS_DETAILS = [
     color: "bg-red-600",
   },
 ];
+
+export const TRENDING_TOPICS_DETAILS = [
+  {
+    id: "id1",
+    image: {
+      src: img1,
+      alt: "First Image",
+    },
+    title: "Travel",
+  },
+  {
+    id: "id2",
+    image: {
+      src: img2,
+      alt: "Second Image",
+    },
+    title: "Business",
+  },
+  {
+    id: "id3",
+    image: {
+      src: img3,
+      alt: "Third Image",
+    },
+    title: "Marketing",
+  },
+  {
+    id: "id4",
+    image: {
+      src: img4,
+      alt: "Fourth Image",
+    },
+    title: "Photography",
+  },
+  {
+    id: "id5",
+    image: {
+      src: img5,
+      alt: "Fifth Image",
+    },
+    title: "Sports",
+  },
+];
+
+export const RECENT_POST_DETAILS = [
+  {
+    id: "id1",
+    image: {
+      src: img1,
+      alt: "First Image",
+    },
+    title: "The pros and cons of business agency",
+    date: "January 21,2024",
+  },
+  {
+    id: "id2",
+    image: {
+      src: img2,
+      alt: "Second Image",
+    },
+    title: "5 reasons why you shouldn't startup",
+    date: "January 21,2024",
+  },
+  {
+    id: "id3",
+    image: {
+      src: img3,
+      alt: "Third Image",
+    },
+    title: "Ten questions you should answer truthfully.",
+    date: "January 21,2024",
+  },
+  {
+    id: "id4",
+    image: {
+      src: img4,
+      alt: "Fourth Image",
+    },
+    title: "Five unbelievable facts about money.",
+    date: "January 21,2024",
+  },
+];
