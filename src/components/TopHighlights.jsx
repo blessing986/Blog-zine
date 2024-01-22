@@ -41,7 +41,7 @@ export default function TopHighlights() {
 
   return (
     <>
-      <div className="mx-4 md:mx-16 mt-16">
+      <div className="mt-16">
         <h1 className="text-3xl md:text-5xl font-medium">
           Today's top highlights
         </h1>
@@ -51,10 +51,10 @@ export default function TopHighlights() {
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="md:w-[70%]">
-          <div class="grid md:grid-cols-2">{TopHighlightsList}</div>
+          <div className="grid md:grid-cols-2 gap-12">{TopHighlightsList}</div>
 
           <div className="flex justify-center items-center mt-16 md:mt-8 mb-10">
-            <button className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 md:px-6 md:py-4 text-lg md:text-2xl font-bold rounded-lg">
+            <button className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 md:px-6 md:py-4 text-lg md:text-2xl font-bold rounded-lg hover:text-white hover:bg-sky-700">
               Load more post{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,8 +74,8 @@ export default function TopHighlights() {
           </div>
         </div>
 
-        <div className="md:w-[30%] mx-4">
-          <div className="md:ml-16 md:mr-28">
+        <div className="md:w-[30%] mx-4 md:ml-16 md:mr-28">
+          <div>
             <h1 className="text-2xl md:text-4xl font-medium mb-8">
               Trending Topics
             </h1>
@@ -86,8 +86,13 @@ export default function TopHighlights() {
               View all categories
             </p>
           </div>
-          <h1 className="text-2xl md:text-4xl font-medium mb-8">Recent Post</h1>
-          <div>{RecentPostList}</div>
+
+          <div className="mt-10">
+            <h1 className="text-2xl md:text-4xl font-medium mb-8">
+              Recent Post
+            </h1>
+            <div>{RecentPostList}</div>
+          </div>
         </div>
       </div>
     </>
