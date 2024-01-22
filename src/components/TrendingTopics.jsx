@@ -12,6 +12,7 @@ export default function TrendingTopics({ image, title }) {
   }
 
   let toggleClassCheck = hover ? "underline underline-offset-8" : "";
+  
   return (
     <>
       <div

@@ -7,7 +7,7 @@ export default function TopHighlightsItem({
 }) {
   return (
     <>
-      <div className="relative mx-4 md:ml-16">
+      <div className="relative">
         <img
           src={image.src}
           alt={image.alt}
