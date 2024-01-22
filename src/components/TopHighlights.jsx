@@ -74,7 +74,7 @@ export default function TopHighlights() {
           </div>
         </div>
 
-        <div className="md:w-[30%] mx-4 md:ml-16 md:mr-28">
+        <div className="md:w-[30%] md:ml-16 md:mr-20">
           <div>
             <h1 className="text-2xl md:text-4xl font-medium mb-8">
               Trending Topics
@@ -82,7 +82,7 @@ export default function TopHighlights() {
 
             <div>{TrendingTopicsList}</div>
 
-            <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-2xl font-bold">
+            <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold">
               View all categories
             </p>
           </div>

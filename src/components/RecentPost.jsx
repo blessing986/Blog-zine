@@ -23,13 +23,13 @@ export default function RecentPost({ image, title, date }) {
         <img
           src={image.src}
           alt={image.alt}
-          className="h-24 w-40 object-cover rounded-xl"
+          className="h-20 md:h-24 w-28 object-cover rounded-lg"
         />
         <div className="ml-6">
-          <h1 className={`text-2xl font-medium mb-3 ${toggleClassCheck}`}>
+          <h1 className={`text-base md:text-2xl font-medium mb-2 md:mb-3 ${toggleClassCheck}`}>
             {title}
           </h1>
-          <span className="text-slate-500 text-xl">{date}</span>
+          <span className="text-slate-500 text-sm md:text-xl">{date}</span>
         </div>
       </div>
     </>
