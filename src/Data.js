@@ -4,6 +4,55 @@ import img3 from "./assets/food3.jpg";
 import img4 from "./assets/food4.jpg";
 import img5 from "./assets/food5.jpg";
 
+export const FIRST_STORYLINE_IMAGE_DETAILS = [
+  {
+    id: "id1",
+    image: {
+      src: img1,
+      alt: "First Image",
+    },
+    category: "LifeStyle",
+    title: "Ten tell-tale signs you need to get a new startup.",
+    description:
+      " No visited raising gravity outward subject my cottage Mr be. Hold do at tore in park feet near my case.",
+  },
+];
+
+export const SECOND_STORYLINE_IMAGE_DETAILS = [
+  {
+    id: "id1",
+    image: {
+      src: img2,
+      alt: "Second Image",
+    },
+    category: "Technology",
+    title: "Best Pinterest boards for learning about business",
+  },
+];
+
+export const THIRD_STORYLINE_IMAGE_DETAILS = [
+  {
+    id: "id1",
+    image: {
+      src: img3,
+      alt: "Third Image",
+    },
+    category: "Business",
+    title: "Five intermediate guide to business",
+    color: "bg-green-500",
+  },
+  {
+    id: "id2",
+    image: {
+      src: img4,
+      alt: "Fourth Image",
+    },
+    category: "Sports",
+    title: "15 reasons to choose startup",
+    color: "bg-blue-500",
+  },
+];
+
 export const TOP_HIGHLIGHTS_DETAILS = [
   {
     id: "id1",
@@ -158,5 +207,64 @@ export const RECENT_POST_DETAILS = [
     },
     title: "Five unbelievable facts about money.",
     date: "January 21,2024",
+  },
+];
+
+export const CAROUSEL_DETAILS = [
+  {
+    id: "id1",
+    image: {
+      src: img1,
+      alt: "First Image",
+    },
+  },
+  {
+    id: "id2",
+    image: {
+      src: img2,
+      alt: "First Image",
+    },
+  },
+  {
+    id: "id3",
+    image: {
+      src: img1,
+      alt: "First Image",
+    },
+  },
+  {
+    id: "id4",
+    image: {
+      src: img2,
+      alt: "First Image",
+    },
+  },
+  {
+    id: "id5",
+    image: {
+      src: img1,
+      alt: "First Image",
+    },
+  },
+  {
+    id: "id6",
+    image: {
+      src: img2,
+      alt: "First Image",
+    },
+  },
+  {
+    id: "id7",
+    image: {
+      src: img1,
+      alt: "First Image",
+    },
+  },
+  {
+    id: "id8",
+    image: {
+      src: img2,
+      alt: "First Image",
+    },
   },
 ];
