@@ -8,7 +8,7 @@ export default function MainNavigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header>
-      <div className="myLogo">
+      <div>
         <img src={logo} alt="Logo" />
       </div>
 
