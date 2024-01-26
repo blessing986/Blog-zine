@@ -4,7 +4,7 @@ import img3 from "./assets/food3.jpg";
 import img4 from "./assets/food4.jpg";
 import img5 from "./assets/food5.jpg";
 
-export const FIRST_STORYLINE_IMAGE_DETAILS = [
+export const DUMMY_DATA = [
   {
     id: "id1",
     image: {
@@ -16,11 +16,8 @@ export const FIRST_STORYLINE_IMAGE_DETAILS = [
     description:
       " No visited raising gravity outward subject my cottage Mr be. Hold do at tore in park feet near my case.",
   },
-];
-
-export const SECOND_STORYLINE_IMAGE_DETAILS = [
   {
-    id: "id1",
+    id: "id2",
     image: {
       src: img2,
       alt: "Second Image",
@@ -28,11 +25,8 @@ export const SECOND_STORYLINE_IMAGE_DETAILS = [
     category: "Technology",
     title: "Best Pinterest boards for learning about business",
   },
-];
-
-export const THIRD_STORYLINE_IMAGE_DETAILS = [
   {
-    id: "id1",
+    id: "id3",
     image: {
       src: img3,
       alt: "Third Image",
@@ -42,7 +36,7 @@ export const THIRD_STORYLINE_IMAGE_DETAILS = [
     color: "bg-green-500",
   },
   {
-    id: "id2",
+    id: "id4",
     image: {
       src: img4,
       alt: "Fourth Image",
@@ -52,6 +46,41 @@ export const THIRD_STORYLINE_IMAGE_DETAILS = [
     color: "bg-blue-500",
   },
 ];
+
+// export const SECOND_STORYLINE_IMAGE_DETAILS = [
+//   {
+//     id: "id1",
+//     image: {
+//       src: img2,
+//       alt: "Second Image",
+//     },
+//     category: "Technology",
+//     title: "Best Pinterest boards for learning about business",
+//   },
+// ];
+
+// export const THIRD_STORYLINE_IMAGE_DETAILS = [
+//   {
+//     id: "id1",
+//     image: {
+//       src: img3,
+//       alt: "Third Image",
+//     },
+//     category: "Business",
+//     title: "Five intermediate guide to business",
+//     color: "bg-green-500",
+//   },
+//   {
+//     id: "id2",
+//     image: {
+//       src: img4,
+//       alt: "Fourth Image",
+//     },
+//     category: "Sports",
+//     title: "15 reasons to choose startup",
+//     color: "bg-blue-500",
+//   },
+// ];
 
 export const TOP_HIGHLIGHTS_DETAILS = [
   {
@@ -217,6 +246,9 @@ export const CAROUSEL_DETAILS = [
       src: img1,
       alt: "First Image",
     },
+    category: "Sports",
+    title: "7 common mistakes everyon makes while traveling",
+    color: "bg-red-600",
   },
   {
     id: "id2",
@@ -224,6 +256,9 @@ export const CAROUSEL_DETAILS = [
       src: img2,
       alt: "First Image",
     },
+    category: "Business",
+    title: "Skills that you can learn from business",
+    color: "bg-yellow-300",
   },
   {
     id: "id3",
@@ -231,6 +266,9 @@ export const CAROUSEL_DETAILS = [
       src: img1,
       alt: "First Image",
     },
+    category: "Technology",
+    title: "10 tell-tale signs you need to get a new business",
+    color: "bg-red-600",
   },
   {
     id: "id4",
@@ -238,6 +276,9 @@ export const CAROUSEL_DETAILS = [
       src: img2,
       alt: "First Image",
     },
+    category: "Lifestyle",
+    title: "This is why this year will be the year of startups",
+    color: "bg-green-500",
   },
   {
     id: "id5",
@@ -245,6 +286,9 @@ export const CAROUSEL_DETAILS = [
       src: img1,
       alt: "First Image",
     },
+    category: "Lifestyle",
+    title: "Best pinterest boards for learning about business",
+    color: "bg-red-600",
   },
   {
     id: "id6",
@@ -252,6 +296,9 @@ export const CAROUSEL_DETAILS = [
       src: img2,
       alt: "First Image",
     },
+    category: "Travel",
+    title: "57 common mistakes everyon makes while traveling",
+    color: "bg-blue-500",
   },
   {
     id: "id7",
@@ -259,6 +306,9 @@ export const CAROUSEL_DETAILS = [
       src: img1,
       alt: "First Image",
     },
+    category: "Gadgets",
+    title: "5 investment doubts you should clarify",
+    color: "bg-red-600",
   },
   {
     id: "id8",
@@ -266,5 +316,8 @@ export const CAROUSEL_DETAILS = [
       src: img2,
       alt: "First Image",
     },
+    category: "Sports",
+    title: "Skills that you can learn from business",
+    color: "bg-yellow-300",
   },
 ];

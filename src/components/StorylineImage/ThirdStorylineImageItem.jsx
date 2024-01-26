@@ -1,11 +1,6 @@
 import { useState } from "react";
 
-export default function ThirdStorylineImageItem({
-  image,
-  category,
-  title,
-  color,
-}) {
+export default function ThirdStorylineImageItem(props) {
   const [hover, setHover] = useState(false);
 
   function handleMouseOver() {
@@ -26,23 +21,23 @@ export default function ThirdStorylineImageItem({
     >
       <div className="w-full h-96 overflow-hidden rounded-3xl">
         <img
-          src={image.src}
-          alt={image.alt}
+          src={props.thirdCard.image.src}
+          alt={props.thirdCard.image.alt}
           className="object-cover hover:scale-110 transition duration-500"
         />
       </div>
       <div className="absolute top-56 md:top-40 ml-6 md:ml-10">
         <p
-          className={`flex items-center ${color} w-28 py-0.5 md:py-2 rounded-lg font-medium md:font-bold text-white`}
+          className={`flex items-center ${props.thirdCard.color} w-28 py-0.5 md:py-2 rounded-lg font-medium md:font-bold text-white`}
         >
           <p className="w-4 h-4 bg-white rounded-full mx-2"></p>
-          {category}
+          {props.thirdCard.category}
         </p>
 
         <h1
           className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
         >
-          {title}
+          {props.thirdCard.title}
         </h1>
 
         <div className="hidden md:flex items-center text-white text-2xl font-medium">

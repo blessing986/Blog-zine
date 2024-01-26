@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SecondStorylineImageItem({ image, category, title }) {
+export default function SecondStorylineImageItem(props) {
   const [hover, setHover] = useState(false);
 
   function handleMouseOver() {
@@ -21,8 +21,8 @@ export default function SecondStorylineImageItem({ image, category, title }) {
     >
       <div className="w-full h-96 overflow-hidden rounded-3xl mb-10">
         <img
-          src={image.src}
-          alt={image.alt}
+          src={props.secondCard.image.src}
+          alt={props.secondCard.image.alt}
           className="object-cover hover:scale-110 transition duration-500"
         />
       </div>
@@ -30,13 +30,13 @@ export default function SecondStorylineImageItem({ image, category, title }) {
       <div className="absolute top-56 md:top-40 ml-6 md:ml-10">
         <p className="flex items-center bg-yellow-300 w-32 py-0.5 md:py-2 rounded-lg font-medium md:font-bold text-white">
           <p className="w-4 h-4 bg-white rounded-full mx-2"></p>
-          {category}
+          {props.secondCard.category}
         </p>
 
         <h1
           className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
         >
-          {title}
+          {props.secondCard.title}
         </h1>
 
         <div className="hidden md:flex items-center text-white text-2xl font-medium">
