@@ -1,34 +1,46 @@
-import img1 from "../assets/food1.jpg"
-import img2 from "../assets/food2.jpg";
-import img3 from "../assets/food3.jpg";
-import img4 from "../assets/food4.jpg";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 import { CAROUSEL_DETAILS } from "../Data";
 import CarouselItem from "./CarouselItem";
 
-export default function Carousel() {
+export default function Carouselbar() {
   const CarouselList = CAROUSEL_DETAILS.map((carousel) => (
-    <CarouselItem id={carousel.id} key={carousel.id} image={carousel.image} />
+    <CarouselItem id={carousel.id}
+    key={carousel.id}
+    image={carousel.image}
+    category={carousel.category}
+    title={carousel.title}
+    color={carousel.color} />
   ));
+
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   return (
     <>
       <div className="mt-16">
-        <h1 className="text-3xl md:text-5xl font-medium">Sponsored news</h1>
+        <h1 className="text-3xl md:text-5xl font-medium mb-10">
+          Sponsored news
+        </h1>
       </div>
-      <div className="flex overflow-x-auto no-scrollbar">{CarouselList}</div>
-      {/* <div className="flex overflow-x-auto no-scrollbar">
-        <img src={img1} alt="1" className="w-[2000px] h-[700px] mr-20"/>
-        <img src={img2} alt="2" className="w-[2000px] h-[700px] mr-20"/>
-        <img src={img3} alt="3" className="w-[2000px] h-[700px] mr-20"/>
-        <img src={img4} alt="4" className="w-[2000px] h-[700px] mr-20"/>
-        <img src={img4} alt="4" className="w-[2000px] h-[700px] mr-20"/>
-        <img src={img4} alt="4" className="w-[2000px] h-[700px] mr-20"/>
-        <img src={img4} alt="4" className="w-[2000px] h-[700px] mr-20"/>
-        <img src={img4} alt="4" className="w-[2000px] h-[700px] mr-20"/>
-        <img src={img4} alt="4" className="w-[2000px] h-[700px] mr-20"/>
-        
-      </div> */}
+      <Carousel responsive={responsive}>{CarouselList}</Carousel>
     </>
   );
 }
