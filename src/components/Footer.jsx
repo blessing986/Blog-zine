@@ -10,19 +10,19 @@ export default function Footer() {
     <>
       <section className="bg-slate-900 mt-20 pt-6 px-4">
         <div className="flex justify-between items-center pb-6 ">
-          <img src={logo} alt="logo" className="w-80 h-20" />
+          <img src={logo} alt="logo" className="w-32 md:w-80 md:h-20" />
           <div className="flex">
-            <img src={instagram} alt="instagram" className="w-20 h-20" />
-            <img src={facebook} alt="facebook" className="w-20 h-20" />
-            <img src={youtube} alt="youtube" className="w-20 h-20" />
-            <img src={twitterX} alt="twitterX" className="w-20 h-20" />
-            <img src={linkedIn} alt="linkedIn" className="w-20 h-20" />
+            <img src={instagram} alt="instagram" className="w-10 md:w-20 md:h-20" />
+            <img src={facebook} alt="facebook" className="w-10 md:w-20 md:h-20" />
+            <img src={youtube} alt="youtube" className="w-10 md:w-20 md:h-20" />
+            <img src={twitterX} alt="twitterX" className="w-10 md:w-20 md:h-20" />
+            <img src={linkedIn} alt="linkedIn" className="w-10 md:w-20 md:h-20" />
           </div>
         </div>
 
         <hr />
 
-        <div className="flex justify-around py-10 text-slate-200">
+        <div className="flex flex-col md:flex-row justify-around py-10 text-slate-200">
           <div>
             <h1 className="text-sky-700 text-3xl font-medium mb-4">Sections</h1>
             <ul>

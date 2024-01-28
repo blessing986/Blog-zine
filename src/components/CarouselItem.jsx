@@ -15,7 +15,7 @@ export default function CarouselItem(props) {
             {props.slider.category}
           </p>
         </div>
-        <h1 className="text-xl md:text-3xl font-medium mt-6 pr-8">{props.slider.title}</h1>
+        <h1 className="text-xl md:text-3xl font-medium mt-6 md:pr-8">{props.slider.title}</h1>
       </div>
     </>
   );

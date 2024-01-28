@@ -30,7 +30,7 @@ export default function ThirdStorylineImageItem(props) {
         <p
           className={`flex items-center ${props.thirdCard.color} w-28 py-0.5 md:py-2 rounded-lg font-medium md:font-bold text-white`}
         >
-          <p className="w-4 h-4 bg-white rounded-full mx-2"></p>
+          <span className="w-4 h-4 bg-white rounded-full mx-2"></span>
           {props.thirdCard.category}
         </p>
 

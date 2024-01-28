@@ -29,7 +29,7 @@ export default function SecondStorylineImageItem(props) {
 
       <div className="absolute top-56 md:top-40 ml-6 md:ml-10">
         <p className="flex items-center bg-yellow-300 w-32 py-0.5 md:py-2 rounded-lg font-medium md:font-bold text-white">
-          <p className="w-4 h-4 bg-white rounded-full mx-2"></p>
+          <span className="w-4 h-4 bg-white rounded-full mx-2"></span>
           {props.secondCard.category}
         </p>
 

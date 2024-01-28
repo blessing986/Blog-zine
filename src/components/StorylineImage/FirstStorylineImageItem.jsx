@@ -30,7 +30,7 @@ export default function FirstStorylineImageItem(props) {
 
         <div className="absolute top-40 md:top-1/2 ml-6 md:ml-10 text-white">
           <p className="flex items-center bg-red-600 w-28 py-0.5 md:py-2 rounded-lg font-medium md:font-bold text-white">
-            <p className="w-4 h-4 bg-white rounded-full mx-2"></p>
+            <span className="w-4 h-4 bg-white rounded-full mx-2"></span>
             {props.firstCard.category}
           </p>
 
@@ -40,7 +40,7 @@ export default function FirstStorylineImageItem(props) {
             {props.firstCard.title}
           </h1>
 
-          <p className="text-white text-lg md:text-2xl my-4">
+          <p className="text-white md:text-2xl my-4">
             {props.firstCard.description}
           </p>
 
