@@ -193,21 +193,18 @@ export const DUMMY_DATA = [
     title: "Five unbelievable facts about money.",
     date: "January 21,2024",
   },
-];
-
-export const CAROUSEL_DETAILS = [
   {
-    id: "id1",
+    id: "id20",
     image: {
       src: img1,
       alt: "First Image",
     },
     category: "Sports",
-    title: "7 common mistakes everyon makes while traveling",
+    title: "7 common mistakes everyone makes while traveling",
     color: "bg-red-600",
   },
   {
-    id: "id2",
+    id: "id21",
     image: {
       src: img2,
       alt: "First Image",
@@ -217,7 +214,7 @@ export const CAROUSEL_DETAILS = [
     color: "bg-yellow-300",
   },
   {
-    id: "id3",
+    id: "id22",
     image: {
       src: img1,
       alt: "First Image",
@@ -227,7 +224,7 @@ export const CAROUSEL_DETAILS = [
     color: "bg-red-600",
   },
   {
-    id: "id4",
+    id: "id23",
     image: {
       src: img2,
       alt: "First Image",
@@ -237,7 +234,7 @@ export const CAROUSEL_DETAILS = [
     color: "bg-green-500",
   },
   {
-    id: "id5",
+    id: "id24",
     image: {
       src: img1,
       alt: "First Image",
@@ -247,17 +244,17 @@ export const CAROUSEL_DETAILS = [
     color: "bg-red-600",
   },
   {
-    id: "id6",
+    id: "id25",
     image: {
       src: img2,
       alt: "First Image",
     },
     category: "Travel",
-    title: "57 common mistakes everyon makes while traveling",
+    title: "57 common mistakes everyone makes while traveling",
     color: "bg-blue-500",
   },
   {
-    id: "id7",
+    id: "id26",
     image: {
       src: img1,
       alt: "First Image",
@@ -267,7 +264,7 @@ export const CAROUSEL_DETAILS = [
     color: "bg-red-600",
   },
   {
-    id: "id8",
+    id: "id27",
     image: {
       src: img2,
       alt: "First Image",
