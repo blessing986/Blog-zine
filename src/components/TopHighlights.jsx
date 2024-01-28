@@ -1,44 +1,9 @@
-import {
-  RECENT_POST_DETAILS,
-  TOP_HIGHLIGHTS_DETAILS,
-  TRENDING_TOPICS_DETAILS,
-} from "../Data";
+import { DUMMY_DATA } from "../Data";
 import RecentPost from "./RecentPost";
 import TopHighlightsItem from "./TopHighlightsItem";
 import TrendingTopics from "./TrendingTopics";
 
 export default function TopHighlights() {
-  const TopHighlightsList = TOP_HIGHLIGHTS_DETAILS.map((highlights) => (
-    <TopHighlightsItem
-      id={highlights.id}
-      key={highlights.id}
-      image={highlights.image}
-      category={highlights.category}
-      title={highlights.title}
-      description={highlights.description}
-      color={highlights.color}
-    />
-  ));
-
-  const TrendingTopicsList = TRENDING_TOPICS_DETAILS.map((trending) => (
-    <TrendingTopics
-      id={trending.id}
-      key={trending.id}
-      image={trending.image}
-      title={trending.title}
-    />
-  ));
-
-  const RecentPostList = RECENT_POST_DETAILS.map((recent) => (
-    <RecentPost
-      id={recent.id}
-      key={recent.id}
-      image={recent.image}
-      title={recent.title}
-      date={recent.date}
-    />
-  ));
-
   return (
     <>
       <div className="mt-16">
@@ -51,7 +16,14 @@ export default function TopHighlights() {
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="md:w-[70%]">
-          <div className="grid md:grid-cols-2 gap-12">{TopHighlightsList}</div>
+          <div className="grid md:grid-cols-2 gap-12">
+            <TopHighlightsItem highlight={DUMMY_DATA[4]} />
+            <TopHighlightsItem highlight={DUMMY_DATA[5]} />
+            <TopHighlightsItem highlight={DUMMY_DATA[6]} />
+            <TopHighlightsItem highlight={DUMMY_DATA[7]} />
+            <TopHighlightsItem highlight={DUMMY_DATA[8]} />
+            <TopHighlightsItem highlight={DUMMY_DATA[9]} />
+          </div>
 
           <div className="flex justify-center items-center mt-16 md:mt-8 mb-10">
             <button className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 md:px-6 md:py-4 text-lg md:text-2xl font-bold rounded-lg hover:text-white hover:bg-sky-700">
@@ -80,7 +52,13 @@ export default function TopHighlights() {
               Trending Topics
             </h1>
 
-            <div>{TrendingTopicsList}</div>
+            <div>
+              <TrendingTopics trend={DUMMY_DATA[10]} />
+              <TrendingTopics trend={DUMMY_DATA[11]} />
+              <TrendingTopics trend={DUMMY_DATA[12]} />
+              <TrendingTopics trend={DUMMY_DATA[13]} />
+              <TrendingTopics trend={DUMMY_DATA[14]} />
+            </div>
 
             <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold">
               View all categories
@@ -91,7 +69,12 @@ export default function TopHighlights() {
             <h1 className="text-2xl md:text-4xl font-medium mb-8">
               Recent Post
             </h1>
-            <div>{RecentPostList}</div>
+            <div>
+            <RecentPost post={DUMMY_DATA[15]} />
+            <RecentPost post={DUMMY_DATA[16]} />
+            <RecentPost post={DUMMY_DATA[17]} />
+            <RecentPost post={DUMMY_DATA[18]} />
+            </div>
           </div>
         </div>
       </div>

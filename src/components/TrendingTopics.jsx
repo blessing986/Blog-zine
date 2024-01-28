@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function TrendingTopics({ image, title }) {
+export default function TrendingTopics(props) {
   const [hover, setHover] = useState(false);
 
   function handleMouseOver() {
@@ -22,12 +22,12 @@ export default function TrendingTopics({ image, title }) {
       >
         <div className="flex items-center justify-center h-16 md:h-24 w-full overflow-hidden rounded-md mb-6 md:mb-10 cursor-pointer">
           <img
-            src={image.src}
-            alt={image.alt}
+            src={props.trend.image.src}
+            alt={props.trend.image.alt}
             className="object-cover mb-8 hover:scale-110 transition duration-500"
           />
           <p className={`absolute text-xl md:text-3xl font-bold text-white ${toggleClassCheck}`}>
-            {title}
+            {props.trend.title}
           </p>
         </div>
       </div>

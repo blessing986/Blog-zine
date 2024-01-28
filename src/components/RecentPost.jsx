@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function RecentPost({ image, title, date }) {
+export default function RecentPost(props) {
   const [hover, setHover] = useState(false);
 
   function handleMouseOver() {
@@ -21,15 +21,15 @@ export default function RecentPost({ image, title, date }) {
         onMouseOut={handleMouseOut}
       >
         <img
-          src={image.src}
-          alt={image.alt}
+          src={props.post.image.src}
+          alt={props.post.image.alt}
           className="h-20 md:h-24 w-28 object-cover rounded-lg"
         />
         <div className="ml-6">
           <h1 className={`text-base md:text-2xl font-medium mb-2 md:mb-3 ${toggleClassCheck}`}>
-            {title}
+            {props.post.title}
           </h1>
-          <span className="text-slate-500 text-sm md:text-xl">{date}</span>
+          <span className="text-slate-500 text-sm md:text-xl">{props.post.date}</span>
         </div>
       </div>
     </>

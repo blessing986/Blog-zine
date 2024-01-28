@@ -45,46 +45,8 @@ export const DUMMY_DATA = [
     title: "15 reasons to choose startup",
     color: "bg-blue-500",
   },
-];
-
-// export const SECOND_STORYLINE_IMAGE_DETAILS = [
-//   {
-//     id: "id1",
-//     image: {
-//       src: img2,
-//       alt: "Second Image",
-//     },
-//     category: "Technology",
-//     title: "Best Pinterest boards for learning about business",
-//   },
-// ];
-
-// export const THIRD_STORYLINE_IMAGE_DETAILS = [
-//   {
-//     id: "id1",
-//     image: {
-//       src: img3,
-//       alt: "Third Image",
-//     },
-//     category: "Business",
-//     title: "Five intermediate guide to business",
-//     color: "bg-green-500",
-//   },
-//   {
-//     id: "id2",
-//     image: {
-//       src: img4,
-//       alt: "Fourth Image",
-//     },
-//     category: "Sports",
-//     title: "15 reasons to choose startup",
-//     color: "bg-blue-500",
-//   },
-// ];
-
-export const TOP_HIGHLIGHTS_DETAILS = [
   {
-    id: "id1",
+    id: "id5",
     image: {
       src: img1,
       alt: "First Image",
@@ -96,7 +58,7 @@ export const TOP_HIGHLIGHTS_DETAILS = [
     color: "bg-yellow-300",
   },
   {
-    id: "id2",
+    id: "id6",
     image: {
       src: img2,
       alt: "Second Image",
@@ -108,7 +70,7 @@ export const TOP_HIGHLIGHTS_DETAILS = [
     color: "bg-red-600",
   },
   {
-    id: "id3",
+    id: "id7",
     image: {
       src: img3,
       alt: "Third Image",
@@ -120,7 +82,7 @@ export const TOP_HIGHLIGHTS_DETAILS = [
     color: "bg-green-500",
   },
   {
-    id: "id4",
+    id: "id8",
     image: {
       src: img4,
       alt: "Fourth Image",
@@ -132,7 +94,7 @@ export const TOP_HIGHLIGHTS_DETAILS = [
     color: "bg-blue-500",
   },
   {
-    id: "id5",
+    id: "id9",
     image: {
       src: img5,
       alt: "Fifth Image",
@@ -144,7 +106,7 @@ export const TOP_HIGHLIGHTS_DETAILS = [
     color: "bg-yellow-300",
   },
   {
-    id: "id6",
+    id: "id10",
     image: {
       src: img1,
       alt: "Sixth Image",
@@ -155,11 +117,8 @@ export const TOP_HIGHLIGHTS_DETAILS = [
       "Was out laughter raptures returned outweigh. Luckily cheered colonel I do we attack highest enabled. Tried law yet style child. The bore of true of no be deal.",
     color: "bg-red-600",
   },
-];
-
-export const TRENDING_TOPICS_DETAILS = [
   {
-    id: "id1",
+    id: "id11",
     image: {
       src: img1,
       alt: "First Image",
@@ -167,7 +126,7 @@ export const TRENDING_TOPICS_DETAILS = [
     title: "Travel",
   },
   {
-    id: "id2",
+    id: "id12",
     image: {
       src: img2,
       alt: "Second Image",
@@ -175,7 +134,7 @@ export const TRENDING_TOPICS_DETAILS = [
     title: "Business",
   },
   {
-    id: "id3",
+    id: "id13",
     image: {
       src: img3,
       alt: "Third Image",
@@ -183,7 +142,7 @@ export const TRENDING_TOPICS_DETAILS = [
     title: "Marketing",
   },
   {
-    id: "id4",
+    id: "id14",
     image: {
       src: img4,
       alt: "Fourth Image",
@@ -191,18 +150,15 @@ export const TRENDING_TOPICS_DETAILS = [
     title: "Photography",
   },
   {
-    id: "id5",
+    id: "id15",
     image: {
       src: img5,
       alt: "Fifth Image",
     },
     title: "Sports",
   },
-];
-
-export const RECENT_POST_DETAILS = [
   {
-    id: "id1",
+    id: "id16",
     image: {
       src: img1,
       alt: "First Image",
@@ -211,7 +167,7 @@ export const RECENT_POST_DETAILS = [
     date: "January 21,2024",
   },
   {
-    id: "id2",
+    id: "id17",
     image: {
       src: img2,
       alt: "Second Image",
@@ -220,7 +176,7 @@ export const RECENT_POST_DETAILS = [
     date: "January 21,2024",
   },
   {
-    id: "id3",
+    id: "id18",
     image: {
       src: img3,
       alt: "Third Image",
@@ -229,7 +185,7 @@ export const RECENT_POST_DETAILS = [
     date: "January 21,2024",
   },
   {
-    id: "id4",
+    id: "id19",
     image: {
       src: img4,
       alt: "Fourth Image",
