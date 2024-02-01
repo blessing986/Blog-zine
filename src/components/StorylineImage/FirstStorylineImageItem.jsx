@@ -1,3 +1,14 @@
+// export default function FirstStorylineImageItem(props) {
+//   return (
+//     <>
+//       <div>{props.firstCard.title}</div>
+//       {/* <div>{props.firstCard.multimedia}</div> */}
+//       <div>{props.firstCard.multimedia[0].url}</div>
+
+//     </>
+//   );
+// }
+
 import { useState } from "react";
 
 export default function FirstStorylineImageItem(props) {
@@ -20,38 +31,33 @@ export default function FirstStorylineImageItem(props) {
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
-        <div className="w-full h-[400px] md:h-[808px] overflow-hidden rounded-3xl">
-          <img
-            src={props.firstCard.image.src}
-            alt={props.firstCard.image.alt}
-            className="object-cover hover:scale-110 transition duration-500"
-          />
-        </div>
-
-        <div className="absolute top-40 md:top-1/2 ml-6 md:ml-10 text-white">
-          <p className="flex items-center bg-red-600 w-28 py-0.5 md:py-2 rounded-lg font-medium md:font-bold text-white">
-            <span className="w-4 h-4 bg-white rounded-full mx-2"></span>
-            {props.firstCard.category}
-          </p>
-
-          <h1
-            className={`text-white text-2xl md:text-6xl font-bold my-4 ${toggleClassCheck}`}
-          >
-            {props.firstCard.title}
-          </h1>
-
-          <p className="text-white md:text-2xl my-4">
-            {props.firstCard.description}
-          </p>
-
-          <div className="hidden md:flex items-center text-white text-2xl font-medium">
-            <p>
-              by <span className="hover:underline">Zero</span>{" "}
-            </p>
-            <p className="w-1.5 h-1.5 bg-white rounded-full mx-6"></p>
-            <p>Jan 16,2024</p>
+        <a href={props.firstCard.url} rel="noreferrer" target="_blank">
+          <div className="w-full h-[400px] md:h-[808px] overflow-hidden rounded-3xl">
+            <img
+              src={props.firstCard.multimedia[0].url}
+              alt={props.firstCard.title}
+              className="object-cover hover:scale-110 transition duration-500 h-full"
+            />
           </div>
-        </div>
+
+          <div className="absolute top-40 md:top-1/2 ml-6 md:ml-10 text-white">
+            <h1
+              className={`text-white text-2xl md:text-6xl font-bold my-4 ${toggleClassCheck}`}
+            >
+              {props.firstCard.title}
+            </h1>
+
+            <p className="text-white md:text-2xl my-4">
+              {props.firstCard.abstract}
+            </p>
+
+            <div className="hidden md:flex items-center text-white text-2xl font-medium">
+              <p className="hover:underline">{props.firstCard.byline}</p>
+              <p className="w-1.5 h-1.5 bg-white rounded-full mx-6"></p>
+              <p>{props.firstCard.published_date}</p>
+            </div>
+          </div>
+        </a>
       </div>
     </>
   );
