@@ -24,7 +24,7 @@ export default function SecondStorylineImageItem(props) {
           <img
             src={props.secondCard.multimedia[0].url}
             alt={props.secondCard.title}
-            className="object-cover hover:scale-110 transition duration-500 w-full"
+            className="object-cover hover:scale-110 transition duration-500 w-full h-full"
           />
         </div>
 
