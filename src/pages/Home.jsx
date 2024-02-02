@@ -38,7 +38,7 @@ export default function Home() {
             <SecondStorylineImageItem secondCard={availableNews[1]} />
             <div className="grid md:grid-cols-2 gap-10">
               <ThirdStorylineImageItem thirdCard={availableNews[2]} />
-              <ThirdStorylineImageItem thirdCard={availableNews[5]} />
+              <ThirdStorylineImageItem thirdCard={availableNews[3]} />
             </div>
           </div>
         </div>
