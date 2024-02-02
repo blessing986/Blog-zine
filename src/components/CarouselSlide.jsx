@@ -3,8 +3,24 @@ import "react-multi-carousel/lib/styles.css";
 
 import { DUMMY_DATA } from "../Data";
 import CarouselItem from "./CarouselItem";
+import { useEffect, useState } from "react";
+
+const URL =
+  "https://api.nytimes.com/svc/topstories/v2/fashion.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
 
 export default function CarouselSlide() {
+  const [availableNews, setAvailableNews] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(URL);
+      const resData = await result.json();
+      console.log(resData.results[0]);
+      setAvailableNews(resData.results);
+    };
+    fetchData();
+  }, []);
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -24,6 +40,16 @@ export default function CarouselSlide() {
     },
   };
 
+  const CarouselSection = availableNews.map((carousel) => (
+    <CarouselItem
+      key={carousel.title}
+      title={carousel.title}
+      image={carousel.multimedia}
+      url={carousel.url}
+      date={carousel.published_date}
+    />
+  ));
+
   return (
     <>
       <div className="mt-16">
@@ -31,16 +57,7 @@ export default function CarouselSlide() {
           Sponsored news
         </h1>
       </div>
-      <Carousel responsive={responsive}>
-        <CarouselItem slider={DUMMY_DATA[19]} />
-        <CarouselItem slider={DUMMY_DATA[20]} />
-        <CarouselItem slider={DUMMY_DATA[21]} />
-        <CarouselItem slider={DUMMY_DATA[22]} />
-        <CarouselItem slider={DUMMY_DATA[23]} />
-        <CarouselItem slider={DUMMY_DATA[24]} />
-        <CarouselItem slider={DUMMY_DATA[25]} />
-        <CarouselItem slider={DUMMY_DATA[26]} />
-      </Carousel>
+      <Carousel responsive={responsive}>{CarouselSection}</Carousel>
     </>
   );
 }
