@@ -56,10 +56,10 @@ export default function MainNavigation() {
         <li>
           {" "}
           <NavLink
-            to="/lifestyle"
+            to="/politics"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
           >
-            LifeStyle{" "}
+            Politics{" "}
           </NavLink>
         </li>
         <li>
@@ -78,6 +78,15 @@ export default function MainNavigation() {
             className={({ isActive }) => (isActive ? styles.active : undefined)}
           >
             Technology{" "}
+          </NavLink>
+        </li>
+        <li>
+          {" "}
+          <NavLink
+            to="/food"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Food{" "}
           </NavLink>
         </li>
       </ul>

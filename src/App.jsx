@@ -3,9 +3,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./pages/Root";
 import Home from "./pages/Home";
 import Business from "./pages/Business";
-import LifeStyle from "./pages/LifeStyle";
 import Sports from "./pages/Sports";
 import Technology from "./pages/Technology";
+import Politics from "./pages/Politics";
+import Food from "./pages/Food";
 
 const router = createBrowserRouter([
   {
@@ -14,9 +15,10 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "/business", element: <Business /> },
-      { path: "/lifestyle", element: <LifeStyle /> },
+      { path: "/politics", element: <Politics /> },
       { path: "/sports", element: <Sports /> },
       { path: "/technology", element: <Technology /> },
+      { path: "/food", element: <Food /> },
     ],
   },
 ]);

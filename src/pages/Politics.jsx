@@ -3,9 +3,9 @@ import PagesItem from "./PagesItem";
 import Footer from "../components/Footer";
 
 const URL =
-  "https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
+  "https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
 
-export default function Technology() {
+export default function Politics() {
   const [availableNews, setAvailableNews] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -22,25 +22,24 @@ export default function Technology() {
 
   if (loading) return <h1>Loading...</h1>;
 
-  const TechnologySection = availableNews.map((technology) => (
+  const PoliticsSection = availableNews.map((Politics) => (
     <PagesItem
-      key={technology.title}
-      title={technology.title}
-      image={technology.multimedia}
-      abstract={technology.abstract}
-      url={technology.url}
-      byline={technology.byline}
-      date={technology.published_date}
+      key={Politics.title}
+      title={Politics.title}
+      image={Politics.multimedia}
+      abstract={Politics.abstract}
+      url={Politics.url}
+      byline={Politics.byline}
+      date={Politics.published_date}
     />
   ));
-
   return (
     <>
       <h1 className="text-3xl md:text-6xl font-medium text-center my-10">
-        Technology
+        Politics
       </h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mx-4 md:mx-20">
-        {TechnologySection}
+        {PoliticsSection}
       </div>
       <Footer />
     </>
