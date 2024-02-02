@@ -1,9 +1,35 @@
+import { useEffect, useState } from "react";
 import { DUMMY_DATA } from "../Data";
 import RecentPost from "./RecentPost";
 import TopHighlightsItem from "./TopHighlightsItem";
 import TrendingTopics from "./TrendingTopics";
 
+const URL =
+  "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
+
 export default function TopHighlights() {
+  const [availableNews, setAvailableNews] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(URL);
+      const resData = await result.json();
+      console.log(resData.results[0]);
+      setAvailableNews(resData.results);
+    };
+    fetchData();
+  }, []);
+
+  const TopHighlights = availableNews.map((highlight) => (
+    <TopHighlightsItem
+      key={highlight.title}
+      title={highlight.title}
+      image={highlight.multimedia}
+      abstract={highlight.abstract}
+      url={highlight.url}
+    />
+  ));
+
   return (
     <>
       <div className="mt-16">
@@ -16,14 +42,7 @@ export default function TopHighlights() {
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="md:w-[70%]">
-          <div className="grid md:grid-cols-2 gap-12">
-            <TopHighlightsItem highlight={DUMMY_DATA[4]} />
-            <TopHighlightsItem highlight={DUMMY_DATA[5]} />
-            <TopHighlightsItem highlight={DUMMY_DATA[6]} />
-            <TopHighlightsItem highlight={DUMMY_DATA[7]} />
-            <TopHighlightsItem highlight={DUMMY_DATA[8]} />
-            <TopHighlightsItem highlight={DUMMY_DATA[9]} />
-          </div>
+          <div className="grid md:grid-cols-2 gap-12">{TopHighlights}</div>
 
           <div className="flex justify-center items-center mt-16 md:mt-8 mb-10">
             <button className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 md:px-6 md:py-4 text-lg md:text-2xl font-bold rounded-lg hover:text-white hover:bg-sky-700">
@@ -70,10 +89,10 @@ export default function TopHighlights() {
               Recent Post
             </h1>
             <div>
-            <RecentPost post={DUMMY_DATA[15]} />
-            <RecentPost post={DUMMY_DATA[16]} />
-            <RecentPost post={DUMMY_DATA[17]} />
-            <RecentPost post={DUMMY_DATA[18]} />
+              <RecentPost post={DUMMY_DATA[15]} />
+              <RecentPost post={DUMMY_DATA[16]} />
+              <RecentPost post={DUMMY_DATA[17]} />
+              <RecentPost post={DUMMY_DATA[18]} />
             </div>
           </div>
         </div>
