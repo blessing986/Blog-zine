@@ -4,23 +4,44 @@ import RecentPost from "./RecentPost";
 import TopHighlightsItem from "./TopHighlightsItem";
 import TrendingTopics from "./TrendingTopics";
 
-const URL =
+const world_URL =
   "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
 
+const arts_URL =
+  "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
+
+const books_URL =
+  "https://api.nytimes.com/svc/topstories/v2/books/review.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
+
 export default function TopHighlights() {
-  const [availableNews, setAvailableNews] = useState([]);
+  const [availableWorldNews, setAvailableWorldNews] = useState([]);
+  const [availableArtNews, setAvailableArtsNews] = useState([]);
+  const [availableBookNews, setAvailableBookNews] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetch(URL);
+    const fetchWorldData = async () => {
+      const result = await fetch(world_URL);
       const resData = await result.json();
-      console.log(resData.results[0]);
-      setAvailableNews(resData.results);
+      setAvailableWorldNews(resData.results);
     };
-    fetchData();
+    fetchWorldData();
+
+    const fetchArtsData = async () => {
+      const result = await fetch(arts_URL);
+      const resData = await result.json();
+      setAvailableArtsNews(resData.results);
+    };
+    fetchArtsData();
+
+    const fetchBooksData = async () => {
+      const result = await fetch(books_URL);
+      const resData = await result.json();
+      setAvailableBookNews(resData.results);
+    };
+    fetchBooksData();
   }, []);
 
-  const TopHighlights = availableNews.map((highlight) => (
+  const TopHighlights = availableWorldNews.map((highlight) => (
     <TopHighlightsItem
       key={highlight.title}
       title={highlight.title}
@@ -72,11 +93,18 @@ export default function TopHighlights() {
             </h1>
 
             <div>
-              <TrendingTopics trend={DUMMY_DATA[10]} />
-              <TrendingTopics trend={DUMMY_DATA[11]} />
+              <TrendingTopics
+                image={availableArtNews[0]?.multimedia[0]?.url}
+                section={availableArtNews[0]?.section}
+              />
+              <TrendingTopics
+                image={availableBookNews[0]?.multimedia[0]?.url}
+                section={availableBookNews[0]?.section}
+              />
+              {/* <TrendingTopics trend={DUMMY_DATA[11]} />
               <TrendingTopics trend={DUMMY_DATA[12]} />
               <TrendingTopics trend={DUMMY_DATA[13]} />
-              <TrendingTopics trend={DUMMY_DATA[14]} />
+              <TrendingTopics trend={DUMMY_DATA[14]} /> */}
             </div>
 
             <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold">

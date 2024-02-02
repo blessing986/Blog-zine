@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function TrendingTopics(props) {
+export default function TrendingTopics({ image, section }) {
   const [hover, setHover] = useState(false);
 
   function handleMouseOver() {
@@ -12,7 +12,7 @@ export default function TrendingTopics(props) {
   }
 
   let toggleClassCheck = hover ? "underline underline-offset-8" : "";
-  
+
   return (
     <>
       <div
@@ -22,12 +22,14 @@ export default function TrendingTopics(props) {
       >
         <div className="flex items-center justify-center h-16 md:h-24 w-full overflow-hidden rounded-md mb-6 md:mb-10 cursor-pointer">
           <img
-            src={props.trend.image.src}
-            alt={props.trend.image.alt}
+            src={image}
+            alt={section}
             className="object-cover mb-8 hover:scale-110 transition duration-500"
           />
-          <p className={`absolute text-xl md:text-3xl font-bold text-white ${toggleClassCheck}`}>
-            {props.trend.title}
+          <p
+            className={`absolute text-xl md:text-3xl font-bold text-white ${toggleClassCheck}`}
+          >
+            {section}
           </p>
         </div>
       </div>
