@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useState } from "react";
 
 export default function FirstStorylineImageItem(props) {
@@ -45,7 +46,7 @@ export default function FirstStorylineImageItem(props) {
             <div className="hidden md:flex items-center text-2xl font-medium">
               <p className="hover:underline">{props.firstCard.byline}</p>
               <p className="w-1.5 h-1.5 bg-white rounded-full mx-6"></p>
-              <p>{props.firstCard.published_date}</p>
+              <p>{moment(props.firstCard.published_date).format('Do MMMM YYYY')}</p>
             </div>
           </div>
         </a>

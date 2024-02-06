@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export default function PagesItem({
   title,
   image,
@@ -22,7 +24,7 @@ export default function PagesItem({
 
           <div className="flex items-center absolute bottom-0 md:text-2xl font-medium">
             <p>{byline}</p>
-            <p className="ml-20">{date}</p>
+            <p className="ml-20">{moment(date).format('Do MMMM YYYY')}</p>
           </div>
         </a>
       </div>

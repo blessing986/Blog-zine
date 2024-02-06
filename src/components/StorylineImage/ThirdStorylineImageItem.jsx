@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useState } from "react";
 
 export default function ThirdStorylineImageItem(props) {
@@ -31,6 +32,7 @@ export default function ThirdStorylineImageItem(props) {
             className={`object-cover ${zoomInImage} h-full w-full`}
           />
         </div>
+
         <div className="absolute top-56 md:top-40 ml-6 md:ml-10">
           <h1
             className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
@@ -41,7 +43,7 @@ export default function ThirdStorylineImageItem(props) {
           <div className="hidden md:flex items-center text-white text-2xl font-medium">
             <p className="hover:underline">{props.thirdCard.byline}</p>
             <p className="w-1.5 h-1.5 bg-white rounded-full mx-6"></p>
-            <p>{props.thirdCard.published_date}</p>
+            <p>{moment(props.thirdCard.published_date).format('Do MMM YYYY')}</p>
           </div>
         </div>
       </a>

@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export default function CarouselItem({ title, image, url, date }) {
   return (
     <>
@@ -12,7 +14,7 @@ export default function CarouselItem({ title, image, url, date }) {
         <h1 className="text-xl md:text-3xl font-medium mt-6 md:pr-8">
           {title}
         </h1>
-        <p className="mt-6 text-lg font-medium">{date}</p>
+        <p className="mt-6 text-lg font-medium">{moment(date).format('Do MMMM YYYY')}</p>
       </a>
     </>
   );

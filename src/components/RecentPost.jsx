@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useState } from "react";
 
 export default function RecentPost({ image, title, url, date }) {
@@ -33,7 +34,7 @@ export default function RecentPost({ image, title, url, date }) {
               {title}
             </h1>
           </a>
-          <span className="text-slate-500 text-sm md:text-xl">{date}</span>
+          <span className="text-slate-500 text-sm md:text-xl">{moment(date).format('Do MMMM YYYY')}</span>
         </div>
       </div>
     </>
