@@ -24,7 +24,7 @@ export default function MainNavigation() {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-10 h-10 text-sky-700 sm:hidden"
+          className="w-10 h-10 text-sky-700 lg:hidden"
         >
           <path
             strokeLinecap="round"
