@@ -33,8 +33,6 @@ export default function FirstStorylineImageItem(props) {
             />
           </div>
 
-          <div class="absolute inset-0 bg-black opacity-15 rounded-3xl"></div>
-
           <div className="absolute top-40 md:top-1/2 ml-6 md:ml-10 text-white">
             <h1
               className={`text-2xl md:text-6xl font-bold my-4 ${toggleClassCheck}`}

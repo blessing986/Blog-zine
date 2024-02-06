@@ -13,7 +13,6 @@ export default function Sports() {
     const fetchData = async () => {
       const result = await fetch(URL);
       const resData = await result.json();
-      console.log(resData.results[0]);
       setAvailableNews(resData.results);
       setLoading(false);
     };

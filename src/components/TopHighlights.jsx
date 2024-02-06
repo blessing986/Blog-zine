@@ -8,20 +8,33 @@ const world_URL = `https://api.nytimes.com/svc/topstories/v2/world.json?api-key=
 
 const home_URL = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${CONSTANTS.nytApiKey}`;
 
+const food_URL = `https://api.nytimes.com/svc/topstories/v2/food.json?api-key=${CONSTANTS.nytApiKey}`;
+
 export default function TopHighlights() {
   const [availableWorldNews, setAvailableWorldNews] = useState([]);
+  // const [showAllWorldNews, setShowAllWorldNews] = useState(false);
   const [availableHomeNews, setAvailableHomeNews] = useState([]);
+  const [availableFoodNews, setAvailableFoodNews] = useState([]);
+
+  // const toggleShowAll = () => {
+  //   setShowAllWorldNews(true);
+  //   setAvailableWorldNews(resData1.results);
+  // };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const result1 = await fetch(world_URL);
         const resData1 = await result1.json();
-        setAvailableWorldNews(resData1.results);
+        setAvailableWorldNews(resData1.results.slice(0, 6));
 
         const result2 = await fetch(home_URL);
         const resData2 = await result2.json();
-        setAvailableHomeNews(resData2.results);
+        setAvailableHomeNews(resData2.results.slice(4, 9));
+
+        const result3 = await fetch(food_URL);
+        const resData3 = await result3.json();
+        setAvailableFoodNews(resData3.results.slice(4, 8));
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -36,6 +49,25 @@ export default function TopHighlights() {
       image={highlight.multimedia}
       abstract={highlight.abstract}
       url={highlight.url}
+    />
+  ));
+
+  const TrendingTopicsDetails = availableHomeNews.map((trending) => (
+    <TrendingTopics
+      key={trending?.url}
+      image={trending?.multimedia[0]?.url}
+      section={trending?.section}
+      url={trending?.url}
+    />
+  ));
+
+  const RecentPostDetails = availableFoodNews.map((recent) => (
+    <RecentPost
+      key={recent?.title}
+      image={recent?.multimedia[0]?.url}
+      title={recent?.title}
+      url={recent?.url}
+      date={recent?.published_date}
     />
   ));
 
@@ -80,53 +112,27 @@ export default function TopHighlights() {
               Trending Topics
             </h1>
 
-            <div>
-              <TrendingTopics
-                image={availableHomeNews[5]?.multimedia[0]?.url}
-                section={availableHomeNews[5]?.section}
-                url={availableHomeNews[5]?.url}
-              />
-
-              <TrendingTopics
-                image={availableHomeNews[6]?.multimedia[0]?.url}
-                section={availableHomeNews[6]?.section}
-                url={availableHomeNews[6]?.url}
-              />
-
-              <TrendingTopics
-                image={availableHomeNews[7]?.multimedia[0]?.url}
-                section={availableHomeNews[7]?.section}
-                url={availableHomeNews[7]?.url}
-              />
-
-              <TrendingTopics
-                image={availableHomeNews[8]?.multimedia[0]?.url}
-                section={availableHomeNews[8]?.section}
-                url={availableHomeNews[8]?.url}
-              />
-
-              <TrendingTopics
-                image={availableHomeNews[9]?.multimedia[0]?.url}
-                section={availableHomeNews[9]?.section}
-                url={availableHomeNews[9]?.url}
-              />
-            </div>
+            <div>{TrendingTopicsDetails}</div>
 
             <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold">
               View all categories
             </p>
+
+            {/* {!showAllWorldNews && (
+              <p
+                onClick={toggleShowAll}
+                className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold"
+              >
+                View all categories
+              </p>
+            )} */}
           </div>
 
           <div className="mt-10">
             <h1 className="text-2xl md:text-4xl font-medium mb-8">
               Recent Post
             </h1>
-            <div>
-              <RecentPost recentPost={availableWorldNews[8]} />
-              <RecentPost recentPost={availableWorldNews[9]} />
-              <RecentPost recentPost={availableWorldNews[10]} />
-              <RecentPost recentPost={availableWorldNews[11]} />
-            </div>
+            <div>{RecentPostDetails}</div>
           </div>
         </div>
       </div>

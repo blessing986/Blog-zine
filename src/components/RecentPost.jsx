@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function RecentPost(props) {
+export default function RecentPost({ image, title, url, date }) {
   const [hover, setHover] = useState(false);
 
   function handleMouseOver() {
@@ -21,21 +21,19 @@ export default function RecentPost(props) {
         onMouseOut={handleMouseOut}
       >
         <img
-          src={props?.recentPost?.multimedia[0]?.url}
-          alt={props?.recentPost?.title}
+          src={image}
+          alt={title}
           className="h-20 md:h-24 w-28 object-cover rounded-lg"
         />
         <div className="ml-6">
-          <a href={props?.recentPost?.url} rel="noreferrer" target="_blank">
+          <a href={url} rel="noreferrer" target="_blank">
             <h1
               className={`text-base md:text-2xl font-medium mb-2 md:mb-3 ${toggleClassCheck}`}
             >
-              {props?.recentPost?.title}
+              {title}
             </h1>
           </a>
-          <span className="text-slate-500 text-sm md:text-xl">
-            {props?.recentPost?.published_date}
-          </span>
+          <span className="text-slate-500 text-sm md:text-xl">{date}</span>
         </div>
       </div>
     </>
