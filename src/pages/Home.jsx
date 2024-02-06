@@ -27,15 +27,15 @@ export default function Home() {
 
   return (
     <>
-      <section className="mx-4 md:mx-16">
+      <section className="mx-4 md:mx-6 lg:mx-16">
         {/* Storyline section */}
 
-        <div className="grid md:grid-cols-2 gap-10 md:my-10">
+        <div className="grid lg:grid-cols-2 gap-10 md:my-10">
           <FirstStorylineImageItem firstCard={availableNews[0]} />
 
           <div>
             <SecondStorylineImageItem secondCard={availableNews[1]} />
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid lg:grid-cols-2 gap-10">
               <ThirdStorylineImageItem thirdCard={availableNews[2]} />
               <ThirdStorylineImageItem thirdCard={availableNews[3]} />
             </div>

@@ -81,9 +81,9 @@ export default function TopHighlights() {
           Latest breaking news, pictures, videos, and special reports
         </p>
       </div>
-      <div className="flex flex-col md:flex-row">
-        <div className="md:w-[70%]">
-          <div className="grid md:grid-cols-2 gap-12">{TopHighlights}</div>
+      <div className="flex flex-col lg:flex-row">
+        <div className="lg:w-[70%]">
+          <div className="grid lg:grid-cols-2 gap-12">{TopHighlights}</div>
 
           <div className="flex justify-center items-center mt-16 md:mt-8 mb-10">
             <button className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 md:px-6 md:py-4 text-lg md:text-2xl font-bold rounded-lg hover:text-white hover:bg-sky-700">
@@ -106,7 +106,7 @@ export default function TopHighlights() {
           </div>
         </div>
 
-        <div className="md:w-[30%] md:ml-16 md:mr-20">
+        <div className="lg:w-[30%] lg:ml-16 lg:mr-20">
           <div>
             <h1 className="text-2xl md:text-4xl font-medium mb-8">
               Trending Topics
