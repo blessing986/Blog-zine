@@ -33,6 +33,8 @@ export default function SecondStorylineImageItem(props) {
           />
         </div>
 
+        <div class="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+
         <div className="absolute top-56 md:top-40 ml-6 md:ml-10 text-white">
           <h1
             className={`text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
