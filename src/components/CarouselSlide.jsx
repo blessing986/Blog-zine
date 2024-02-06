@@ -1,7 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import { DUMMY_DATA } from "../Data";
 import CarouselItem from "./CarouselItem";
 import { useEffect, useState } from "react";
 
@@ -15,7 +14,6 @@ export default function CarouselSlide() {
     const fetchData = async () => {
       const result = await fetch(URL);
       const resData = await result.json();
-      console.log(resData.results[0]);
       setAvailableNews(resData.results);
     };
     fetchData();
