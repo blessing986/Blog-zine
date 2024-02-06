@@ -13,6 +13,10 @@ export default function ThirdStorylineImageItem(props) {
 
   let toggleClassCheck = hover ? "underline underline-offset-8" : "";
 
+  let zoomInImage = hover
+  ? "transform transition duration-500 scale-125"
+  : "transform transition duration-500 scale-100";
+
   return (
     <div
       className="relative cursor-pointer"
@@ -24,7 +28,7 @@ export default function ThirdStorylineImageItem(props) {
           <img
             src={props.thirdCard.multimedia[0].url}
             alt={props.thirdCard.title}
-            className="object-cover hover:scale-110 transition duration-500 h-full w-full"
+            className={`object-cover ${zoomInImage} h-full w-full`}
           />
         </div>
         <div className="absolute top-56 md:top-40 ml-6 md:ml-10">

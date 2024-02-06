@@ -13,6 +13,10 @@ export default function SecondStorylineImageItem(props) {
 
   let toggleClassCheck = hover ? "underline underline-offset-8" : "";
 
+  let zoomInImage = hover
+  ? "transform transition duration-500 scale-125"
+  : "transform transition duration-500 scale-100";
+
   return (
     <div
       className="relative cursor-pointer"
@@ -24,18 +28,18 @@ export default function SecondStorylineImageItem(props) {
           <img
             src={props.secondCard.multimedia[0].url}
             alt={props.secondCard.title}
-            className="object-cover hover:scale-110 transition duration-500 w-full h-full"
+            className={`object-cover ${zoomInImage} h-full w-full`}
           />
         </div>
 
-        <div className="absolute top-56 md:top-40 ml-6 md:ml-10">
+        <div className="absolute top-56 md:top-40 ml-6 md:ml-10 text-white">
           <h1
-            className={`text-white text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
+            className={`text-2xl md:text-4xl font-bold my-4 ${toggleClassCheck}`}
           >
             {props.secondCard.title}
           </h1>
 
-          <div className="hidden md:flex items-center text-white text-2xl font-medium">
+          <div className="hidden md:flex items-center text-2xl font-medium">
             <p className="hover:underline">{props.secondCard.byline}</p>
             <p className="w-1.5 h-1.5 bg-white rounded-full mx-6"></p>
             <p>{props.secondCard.published_date}</p>
