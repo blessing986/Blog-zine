@@ -34,7 +34,7 @@ export default function FirstStorylineImageItem(props) {
             />
           </div>
 
-          <div class="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
 
           <div className="absolute top-40 md:top-80 lg:top-1/2 ml-6 md:ml-10 text-white">
             <h1
