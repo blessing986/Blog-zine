@@ -1,44 +1,32 @@
 import { useEffect, useState } from "react";
-import { DUMMY_DATA } from "../Data";
 import RecentPost from "./RecentPost";
 import TopHighlightsItem from "./TopHighlightsItem";
 import TrendingTopics from "./TrendingTopics";
+import { CONSTANTS } from "../constant";
 
-const world_URL =
-  "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
+const world_URL = `https://api.nytimes.com/svc/topstories/v2/world.json?api-key=${CONSTANTS.nytApiKey}`;
 
-const arts_URL =
-  "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
-
-const books_URL =
-  "https://api.nytimes.com/svc/topstories/v2/books/review.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
+const home_URL = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${CONSTANTS.nytApiKey}`;
 
 export default function TopHighlights() {
   const [availableWorldNews, setAvailableWorldNews] = useState([]);
-  const [availableArtNews, setAvailableArtsNews] = useState([]);
-  const [availableBookNews, setAvailableBookNews] = useState([]);
+  const [availableHomeNews, setAvailableHomeNews] = useState([]);
 
   useEffect(() => {
-    const fetchWorldData = async () => {
-      const result = await fetch(world_URL);
-      const resData = await result.json();
-      setAvailableWorldNews(resData.results);
-    };
-    fetchWorldData();
+    const fetchData = async () => {
+      try {
+        const result1 = await fetch(world_URL);
+        const resData1 = await result1.json();
+        setAvailableWorldNews(resData1.results);
 
-    const fetchArtsData = async () => {
-      const result = await fetch(arts_URL);
-      const resData = await result.json();
-      setAvailableArtsNews(resData.results);
+        const result2 = await fetch(home_URL);
+        const resData2 = await result2.json();
+        setAvailableHomeNews(resData2.results);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
-    fetchArtsData();
-
-    const fetchBooksData = async () => {
-      const result = await fetch(books_URL);
-      const resData = await result.json();
-      setAvailableBookNews(resData.results);
-    };
-    fetchBooksData();
+    fetchData();
   }, []);
 
   const TopHighlights = availableWorldNews.map((highlight) => (
@@ -94,17 +82,34 @@ export default function TopHighlights() {
 
             <div>
               <TrendingTopics
-                image={availableArtNews[0]?.multimedia[0]?.url}
-                section={availableArtNews[0]?.section}
+                image={availableHomeNews[5]?.multimedia[0]?.url}
+                section={availableHomeNews[5]?.section}
+                url={availableHomeNews[5]?.url}
               />
+
               <TrendingTopics
-                image={availableBookNews[0]?.multimedia[0]?.url}
-                section={availableBookNews[0]?.section}
+                image={availableHomeNews[6]?.multimedia[0]?.url}
+                section={availableHomeNews[6]?.section}
+                url={availableHomeNews[6]?.url}
               />
-              {/* <TrendingTopics trend={DUMMY_DATA[11]} />
-              <TrendingTopics trend={DUMMY_DATA[12]} />
-              <TrendingTopics trend={DUMMY_DATA[13]} />
-              <TrendingTopics trend={DUMMY_DATA[14]} /> */}
+
+              <TrendingTopics
+                image={availableHomeNews[7]?.multimedia[0]?.url}
+                section={availableHomeNews[7]?.section}
+                url={availableHomeNews[7]?.url}
+              />
+
+              <TrendingTopics
+                image={availableHomeNews[8]?.multimedia[0]?.url}
+                section={availableHomeNews[8]?.section}
+                url={availableHomeNews[8]?.url}
+              />
+
+              <TrendingTopics
+                image={availableHomeNews[9]?.multimedia[0]?.url}
+                section={availableHomeNews[9]?.section}
+                url={availableHomeNews[9]?.url}
+              />
             </div>
 
             <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold">
@@ -117,10 +122,10 @@ export default function TopHighlights() {
               Recent Post
             </h1>
             <div>
-              <RecentPost post={DUMMY_DATA[15]} />
-              <RecentPost post={DUMMY_DATA[16]} />
-              <RecentPost post={DUMMY_DATA[17]} />
-              <RecentPost post={DUMMY_DATA[18]} />
+              <RecentPost recentPost={availableWorldNews[8]} />
+              <RecentPost recentPost={availableWorldNews[9]} />
+              <RecentPost recentPost={availableWorldNews[10]} />
+              <RecentPost recentPost={availableWorldNews[11]} />
             </div>
           </div>
         </div>

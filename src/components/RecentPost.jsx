@@ -21,15 +21,21 @@ export default function RecentPost(props) {
         onMouseOut={handleMouseOut}
       >
         <img
-          src={props.post.image.src}
-          alt={props.post.image.alt}
+          src={props?.recentPost?.multimedia[0]?.url}
+          alt={props?.recentPost?.title}
           className="h-20 md:h-24 w-28 object-cover rounded-lg"
         />
         <div className="ml-6">
-          <h1 className={`text-base md:text-2xl font-medium mb-2 md:mb-3 ${toggleClassCheck}`}>
-            {props.post.title}
-          </h1>
-          <span className="text-slate-500 text-sm md:text-xl">{props.post.date}</span>
+          <a href={props?.recentPost?.url} rel="noreferrer" target="_blank">
+            <h1
+              className={`text-base md:text-2xl font-medium mb-2 md:mb-3 ${toggleClassCheck}`}
+            >
+              {props?.recentPost?.title}
+            </h1>
+          </a>
+          <span className="text-slate-500 text-sm md:text-xl">
+            {props?.recentPost?.published_date}
+          </span>
         </div>
       </div>
     </>
