@@ -12,29 +12,26 @@ const food_URL = `https://api.nytimes.com/svc/topstories/v2/food.json?api-key=${
 
 export default function TopHighlights() {
   const [availableWorldNews, setAvailableWorldNews] = useState([]);
-  // const [showAllWorldNews, setShowAllWorldNews] = useState(false);
+  const [showAllWorldNews, setShowAllWorldNews] = useState(false);
   const [availableHomeNews, setAvailableHomeNews] = useState([]);
   const [availableFoodNews, setAvailableFoodNews] = useState([]);
-
-  // const toggleShowAll = () => {
-  //   setShowAllWorldNews(true);
-  //   setAvailableWorldNews(resData1.results);
-  // };
+  const [worldNews, setWorldNews] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const result1 = await fetch(world_URL);
         const resData1 = await result1.json();
-        setAvailableWorldNews(resData1.results.slice(0, 6));
+        setAvailableWorldNews(resData1.results);
+        setWorldNews(resData1.results?.splice(0, 6));
 
         const result2 = await fetch(home_URL);
         const resData2 = await result2.json();
-        setAvailableHomeNews(resData2.results.slice(4, 9));
+        setAvailableHomeNews(resData2.results?.slice(4, 9));
 
         const result3 = await fetch(food_URL);
         const resData3 = await result3.json();
-        setAvailableFoodNews(resData3.results.slice(4, 8));
+        setAvailableFoodNews(resData3.results?.slice(4, 8));
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -42,7 +39,12 @@ export default function TopHighlights() {
     fetchData();
   }, []);
 
-  const TopHighlights = availableWorldNews.map((highlight) => (
+  const toggleShowAll = () => {
+    setShowAllWorldNews(true);
+    worldNews.push(...availableWorldNews.splice(6, 20));
+  };
+
+  const TopHighlights = worldNews?.map((highlight) => (
     <TopHighlightsItem
       key={highlight.title}
       title={highlight.title}
@@ -52,7 +54,7 @@ export default function TopHighlights() {
     />
   ));
 
-  const TrendingTopicsDetails = availableHomeNews.map((trending) => (
+  const TrendingTopicsDetails = availableHomeNews?.map((trending) => (
     <TrendingTopics
       key={trending?.url}
       image={trending?.multimedia[0]?.url}
@@ -61,7 +63,7 @@ export default function TopHighlights() {
     />
   ));
 
-  const RecentPostDetails = availableFoodNews.map((recent) => (
+  const RecentPostDetails = availableFoodNews?.map((recent) => (
     <RecentPost
       key={recent?.title}
       image={recent?.multimedia[0]?.url}
@@ -86,23 +88,28 @@ export default function TopHighlights() {
           <div className="grid lg:grid-cols-2 gap-12">{TopHighlights}</div>
 
           <div className="flex justify-center items-center mt-16 md:mt-8 mb-10">
-            <button className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 md:px-6 md:py-4 text-lg md:text-2xl font-bold rounded-lg hover:text-white hover:bg-sky-700">
-              Load more post{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6 ml-4"
+            {!showAllWorldNews && (
+              <button
+                onClick={toggleShowAll}
+                className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 md:px-6 md:py-4 text-lg md:text-2xl font-bold rounded-lg hover:text-white hover:bg-sky-700"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                />
-              </svg>{" "}
-            </button>
+                Load more post{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6 ml-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>{" "}
+              </button>
+            )}
           </div>
         </div>
 
@@ -117,15 +124,6 @@ export default function TopHighlights() {
             <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold">
               View all categories
             </p>
-
-            {/* {!showAllWorldNews && (
-              <p
-                onClick={toggleShowAll}
-                className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold"
-              >
-                View all categories
-              </p>
-            )} */}
           </div>
 
           <div className="mt-10">
