@@ -29,7 +29,7 @@ export default function RecentPost({ image, title, url, date }) {
         <div className="ml-6">
           <a href={url} rel="noreferrer" target="_blank">
             <h1
-              className={`text-base md:text-2xl font-medium mb-2 md:mb-3 ${toggleClassCheck}`}
+              className={`text-base lg:text-2xl font-medium mb-2 md:mb-3 ${toggleClassCheck}`}
             >
               {title}
             </h1>

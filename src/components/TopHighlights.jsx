@@ -63,7 +63,7 @@ export default function TopHighlights() {
     />
   ));
 
-  const RecentPostDetails = availableFoodNews?.map((recent) => (
+  const RecentPostDetails = availableFoodNews.map((recent) => (
     <RecentPost
       key={recent?.title}
       image={recent?.multimedia[0]?.url}
