@@ -6,6 +6,7 @@ import ThirdStorylineImageItem from "../components/StorylineImage/ThirdStoryline
 import CarouselSlide from "../components/CarouselSlide";
 import { useEffect, useState } from "react";
 import "../index";
+import Error from "../components/Error";
 
 const URL =
   "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
@@ -13,16 +14,30 @@ const URL =
 export default function Home() {
   const [availableNews, setAvailableNews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(URL);
-      const resData = await result.json();
-      setAvailableNews(resData.results);
+      try {
+        const result = await fetch(URL);
+        const resData = await result.json();
+
+        if (!result.ok) {
+          throw new Error("Failed to fetch post");
+        }
+        setAvailableNews(resData.results);
+      } catch (error) {
+        setError({
+          message:
+            error.message || "Could not fetch post, please try again later.",
+        });
+      }
       setLoading(false);
     };
     fetchData();
   }, []);
+
+  if (error) return <Error title="An error occured!" message={error.message} />;
 
   if (loading)
     return (
@@ -39,17 +54,17 @@ export default function Home() {
 
   return (
     <>
-      <section className="mx-4 md:mx-6 lg:mx-16">
+      <section className="mx-4 md:mx-6">
         {/* Storyline section */}
 
-        <div className="grid lg:grid-cols-2 gap-10 md:my-10">
+        <div className="grid lg:grid-cols-2 gap-5">
           <FirstStorylineImageItem firstCard={availableNews[0]} />
 
           <div>
             <SecondStorylineImageItem secondCard={availableNews[1]} />
-            <div className="grid lg:grid-cols-2 gap-10">
+            <div className="grid md:grid-cols-2 gap-5">
               <ThirdStorylineImageItem thirdCard={availableNews[2]} />
-              <ThirdStorylineImageItem thirdCard={availableNews[3]} />
+              <ThirdStorylineImageItem thirdCard={availableNews[5]} />
             </div>
           </div>
         </div>
