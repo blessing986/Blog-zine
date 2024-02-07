@@ -9,7 +9,7 @@ export default function MainNavigation() {
   return (
     <header>
       <div>
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo" className="h-12"/>
       </div>
 
       <div

@@ -21,19 +21,19 @@ export default function CarouselSlide() {
 
   const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 4000, min: 991 },
       items: 4,
     },
+    desktop: {
+      breakpoint: { max: 991, min: 767 },
+      items: 3,
+    },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 767, min: 575 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 575, min: 0 },
       items: 1,
     },
   };
@@ -44,6 +44,7 @@ export default function CarouselSlide() {
       title={carousel.title}
       image={carousel.multimedia}
       url={carousel.url}
+      byline={carousel.byline}
       date={carousel.published_date}
     />
   ));
@@ -51,7 +52,7 @@ export default function CarouselSlide() {
   return (
     <>
       <div className="mt-16">
-        <h1 className="text-3xl md:text-5xl font-medium mb-10">
+        <h1 className="text-3xl md:text-4xl font-medium mb-10">
           Sponsored news
         </h1>
       </div>

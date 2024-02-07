@@ -46,10 +46,10 @@ export default function Technology() {
 
   return (
     <>
-      <h1 className="text-3xl md:text-6xl font-medium text-center my-10">
+      <h1 className="text-3xl md:text-5xl font-medium text-center my-10">
         Technology
       </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mx-4 md:mx-20">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4">
         {TechnologySection}
       </div>
       <Footer />

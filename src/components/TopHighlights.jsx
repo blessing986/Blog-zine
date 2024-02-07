@@ -76,7 +76,7 @@ export default function TopHighlights() {
   return (
     <>
       <div className="mt-16">
-        <h1 className="text-3xl md:text-5xl font-medium">
+        <h1 className="text-3xl md:text-4xl font-medium">
           Today's top highlights
         </h1>
         <p className="text-slate-500 text-lg md:text-2xl mt-2 mb-10 md:mb-16">
@@ -85,13 +85,13 @@ export default function TopHighlights() {
       </div>
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-[70%]">
-          <div className="grid lg:grid-cols-2 gap-12">{TopHighlights}</div>
+          <div className="grid md:grid-cols-2 md:gap-6">{TopHighlights}</div>
 
           <div className="flex justify-center items-center mt-16 md:mt-8 mb-10">
             {!showAllWorldNews && (
               <button
                 onClick={toggleShowAll}
-                className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 md:px-6 md:py-4 text-lg md:text-2xl font-bold rounded-lg hover:text-white hover:bg-sky-700"
+                className="flex items-center justify-center bg-sky-100 text-sky-700 px-4 py-2 text-lg  font-bold rounded-lg hover:text-white hover:bg-sky-700"
               >
                 Load more post{" "}
                 <svg
@@ -113,7 +113,7 @@ export default function TopHighlights() {
           </div>
         </div>
 
-        <div className="lg:w-[30%] lg:ml-16 lg:mr-20">
+        <div className="lg:w-[30%] lg:ml-10">
           <div>
             <h1 className="text-2xl md:text-4xl font-medium mb-8">
               Trending Topics
@@ -121,7 +121,7 @@ export default function TopHighlights() {
 
             <div>{TrendingTopicsDetails}</div>
 
-            <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-2xl font-bold">
+            <p className="underline underline-offset-8 text-center text-gray-500 hover:text-blue-500 cursor-pointer text-md md:text-xl font-bold mt-6">
               View all categories
             </p>
           </div>

@@ -25,7 +25,7 @@ export default function TrendingTopics({ image, section, url }) {
         onMouseOut={handleMouseOut}
       >
         <a href={url} rel="noreferrer" target="_blank">
-          <div className="flex items-center justify-center h-16 md:h-24 w-full overflow-hidden rounded-md mb-6 md:mb-10 cursor-pointer">
+          <div className="flex items-center justify-center h-16 w-full overflow-hidden rounded-md mb-6 cursor-pointer">
             <img
               src={image}
               alt={section}
@@ -33,7 +33,7 @@ export default function TrendingTopics({ image, section, url }) {
             />
             <div class="absolute inset-0 bg-black opacity-50 rounded-md"></div>
             <p
-              className={`absolute text-xl md:text-3xl font-bold text-white ${toggleClassCheck}`}
+              className={`absolute text-xl md:text-2xl font-bold text-white ${toggleClassCheck}`}
             >
               {section}
             </p>

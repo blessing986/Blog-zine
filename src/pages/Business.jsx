@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BusinessItem from "./PagesItem";
+import PagesItem from "./PagesItem";
 import Footer from "../components/Footer";
 
 const URL =
@@ -32,8 +32,8 @@ export default function Business() {
       </div>
     );
 
-  const BusinessSection = availableNews.map((business) => (
-    <BusinessItem
+  const BusinessSection = availableNews?.map((business) => (
+    <PagesItem
       key={business.title}
       title={business.title}
       image={business.multimedia}
@@ -46,10 +46,10 @@ export default function Business() {
 
   return (
     <>
-      <h1 className="text-3xl md:text-6xl font-medium text-center my-10">
+      <h1 className="text-3xl md:text-5xl font-medium text-center my-10">
         Business
       </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mx-4 md:mx-20">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4">
         {BusinessSection}
       </div>
       <Footer />
