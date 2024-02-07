@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PagesItem from "./PagesItem";
 import Footer from "../components/Footer";
+import Error from "../components/Error";
 
 const URL =
   "https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
@@ -8,16 +9,30 @@ const URL =
 export default function Politics() {
   const [availableNews, setAvailableNews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
+      try {
       const result = await fetch(URL);
       const resData = await result.json();
+
+      if (!result.ok) {
+        throw new Error("Failed to fetch post");
+      }
       setAvailableNews(resData.results);
+    } catch (error) {
+      setError({
+        message:
+          error.message || "Could not fetch post, please try again later.",
+      });
+    }
       setLoading(false);
     };
     fetchData();
   }, []);
+
+  if (error) return <Error title="An error occured!" message={error.message} />;
 
   if (loading)
     return (
@@ -32,7 +47,7 @@ export default function Politics() {
       </div>
     );
 
-  const PoliticsSection = availableNews.map((Politics) => (
+  const PoliticsSection = availableNews?.map((Politics) => (
     <PagesItem
       key={Politics.title}
       title={Politics.title}
