@@ -9,7 +9,7 @@ export default function MainNavigation() {
   return (
     <header>
       <div>
-        <img src={logo} alt="Logo" className="h-12"/>
+        <img src={logo} alt="Logo" className="h-12" />
       </div>
 
       <div
@@ -40,6 +40,9 @@ export default function MainNavigation() {
             to="/"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
             end
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}
           >
             Home{" "}
           </NavLink>
@@ -49,6 +52,9 @@ export default function MainNavigation() {
           <NavLink
             to="/business"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}
           >
             Business{" "}
           </NavLink>
@@ -58,6 +64,9 @@ export default function MainNavigation() {
           <NavLink
             to="/politics"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}
           >
             Politics{" "}
           </NavLink>
@@ -67,6 +76,9 @@ export default function MainNavigation() {
           <NavLink
             to="/sports"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}
           >
             Sports{" "}
           </NavLink>
@@ -76,6 +88,9 @@ export default function MainNavigation() {
           <NavLink
             to="/technology"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}
           >
             Technology{" "}
           </NavLink>
@@ -85,6 +100,9 @@ export default function MainNavigation() {
           <NavLink
             to="/food"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}
           >
             Food{" "}
           </NavLink>
