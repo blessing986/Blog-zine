@@ -1,23 +1,26 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { navbarStateActions } from "../state/navbarState";
+import { NavLink } from "react-router-dom";
 
 import styles from "./MainNavigation.module.css";
-import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 export default function MainNavigation() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  const show = useSelector((state) => state.menuList.showMenu);
+
+  const toggleMenuHandler = () => {
+    dispatch(navbarStateActions.toggleMenu());
+  };
+
   return (
     <header>
       <div>
         <img src={logo} alt="Logo" className="h-12" />
       </div>
 
-      <div
-        className="menu"
-        onClick={() => {
-          setMenuOpen(!menuOpen);
-        }}
-      >
+      <div className="menu" onClick={toggleMenuHandler}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -34,15 +37,13 @@ export default function MainNavigation() {
         </svg>
       </div>
 
-      <ul className={menuOpen ? styles.open : ""}>
+      <ul className={show ? styles.open : ""}>
         <li>
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
             end
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
+            onClick={toggleMenuHandler}
           >
             Home{" "}
           </NavLink>
@@ -52,9 +53,7 @@ export default function MainNavigation() {
           <NavLink
             to="/business"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
+            onClick={toggleMenuHandler}
           >
             Business{" "}
           </NavLink>
@@ -64,9 +63,7 @@ export default function MainNavigation() {
           <NavLink
             to="/politics"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
+            onClick={toggleMenuHandler}
           >
             Politics{" "}
           </NavLink>
@@ -76,9 +73,7 @@ export default function MainNavigation() {
           <NavLink
             to="/sports"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
+            onClick={toggleMenuHandler}
           >
             Sports{" "}
           </NavLink>
@@ -88,9 +83,7 @@ export default function MainNavigation() {
           <NavLink
             to="/technology"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
+            onClick={toggleMenuHandler}
           >
             Technology{" "}
           </NavLink>
@@ -100,9 +93,7 @@ export default function MainNavigation() {
           <NavLink
             to="/food"
             className={({ isActive }) => (isActive ? styles.active : undefined)}
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
+            onClick={toggleMenuHandler}
           >
             Food{" "}
           </NavLink>
