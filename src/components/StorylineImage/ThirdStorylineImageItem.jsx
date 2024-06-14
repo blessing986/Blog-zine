@@ -24,11 +24,11 @@ export default function ThirdStorylineImageItem(props) {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <a href={props.thirdCard.url} rel="noreferrer" target="_blank">
+      <a href={props.thirdCard?.url} rel="noreferrer" target="_blank">
         <div className="w-full h-96 md:h-72 overflow-hidden rounded-3xl">
           <img
-            src={props.thirdCard.multimedia[0].url}
-            alt={props.thirdCard.title}
+            src={props.thirdCard?.multimedia[0]?.url}
+            alt={props.thirdCard?.title}
             className={`object-cover ${zoomInImage} h-full w-full`}
           />
         </div>
@@ -39,14 +39,14 @@ export default function ThirdStorylineImageItem(props) {
           <h1
             className={`text-white font-bold text-2xl md:text-xl my-4 ${toggleClassCheck}`}
           >
-            {props.thirdCard.title}
+            {props.thirdCard?.title}
           </h1>
 
           <div className="hidden md:flex flex-col items-center text-white text-lg font-medium">
-            <p className="hover:underline">{props.thirdCard.byline}</p>
+            <p className="hover:underline">{props.thirdCard?.byline}</p>
             <p className="w-1.5 h-1.5 bg-white rounded-full mx-6"></p>
             <p>
-              {moment(props.thirdCard.published_date).format("Do MMM YYYY")}
+              {moment(props.thirdCard?.published_date).format("Do MMM YYYY")}
             </p>
           </div>
         </div>
