@@ -44,11 +44,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <TopHighlights />
+        <TopHighlights />
 
-        <div className="mb-20 bg-sky-100 h-0.5"></div> */}
+        <div className="mb-20 bg-sky-100 h-0.5"></div>
 
-        {/* <CarouselSlide /> */}
+        <CarouselSlide />
       </section>
 
       <Footer />

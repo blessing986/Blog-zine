@@ -31,7 +31,7 @@ export default function TrendingTopics({ image, section, url }) {
               alt={section}
               className={`object-cover ${zoomInImage} h-full w-full`}
             />
-            <div class="absolute inset-0 bg-black opacity-50 rounded-md"></div>
+            <div className="absolute inset-0 bg-black opacity-50 rounded-md"></div>
             <p
               className={`absolute text-xl md:text-2xl font-bold text-white ${toggleClassCheck}`}
             >
