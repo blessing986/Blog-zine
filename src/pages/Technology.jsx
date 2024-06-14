@@ -1,53 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import PagesItem from "./PagesItem";
 import Footer from "../components/Footer";
 import Error from "../components/Error";
-
-const URL =
-  "https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=YcgpFGOYVpT3Zdkvsv73EcwRTd8qxGP6";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNews } from "../state/fetchingDataState";
+import Loading from "../components/Loading";
 
 export default function Technology() {
-  const [availableNews, setAvailableNews] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState();
+  const dispatch = useDispatch();
+
+  const data = useSelector((state) => state.fetch.data);
+  const loading = useSelector((state) => state.fetch.isLoading);
+  const error = useSelector((state) => state.fetch.error);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-      const result = await fetch(URL);
-      const resData = await result.json();
+    dispatch(fetchNews("technology"));
+  }, [dispatch]);
 
-      if (!result.ok) {
-        throw new Error("Failed to fetch post");
-      }
-      setAvailableNews(resData.results);
-    } catch (error) {
-      setError({
-        message:
-          error.message || "Could not fetch post, please try again later.",
-      });
-    }
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+  if (error) return <Error />;
 
-  if (error) return <Error title="An error occured!" message={error.message} />
+  if (loading) return <Loading />;
 
-  if (loading)
-    return (
-      <div className="h-screen flex justify-center items-center ">
-        <svg
-          className="w-20 h-20 animate-spin"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-        >
-          <path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z" />
-        </svg>
-      </div>
-    );
-
-  const TechnologySection = availableNews?.map((technology) => (
+  const TechnologySection = data?.map((technology) => (
     <PagesItem
       key={technology.title}
       title={technology.title}
